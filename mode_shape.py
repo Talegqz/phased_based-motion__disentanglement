@@ -15,6 +15,7 @@ datapath = 'D:/database/action1-person1-white/frame'
 datapath = 'data/'+datappp
 
 frames_num = 500
+output_num = 100
 basicframe = 0
 start = 1
 timeslot = 1
@@ -265,7 +266,7 @@ def visual_mode(frequency):
         for band in range(bands):
             bandpath = pynumspath + '/orientation%d/' % band
             make_dir(bandpath)
-            for fre in range(frames_num):
+            for fre in range(output_num):
                 now_value = frequency[i][fre][band]
                 # print(now_value)
                 A = cal_A(now_value)
@@ -327,8 +328,8 @@ if __name__ == '__main__':
     frequency = get_modepic(localmotion)
     print('finished fft')
     visual_mode(frequency)
-    visual_weighted_phase(localmotion)
-    visual_phase(p)
+    # visual_weighted_phase(localmotion)
+    # visual_phase(p)
 
     # total framenum frequecy
     print('')
