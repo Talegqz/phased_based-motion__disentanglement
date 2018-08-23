@@ -1,3 +1,4 @@
+# It is used to know the syntax and rules of python and its package
 from PIL import Image
 import numpy as np
 
