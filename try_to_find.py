@@ -20,7 +20,7 @@ make_dir(result_path)
 im1 = cv2.imread(datapath+'/frame/%s.png'%frame1, cv2.IMREAD_GRAYSCALE)
 im1 = np.array(im1)
 im2 = cv2.imread(datapath+'/frame/%s.png'%frame2, cv2.IMREAD_GRAYSCALE)
-s = Steerable(5)
+s = Steerable(7)
 def get_heatmap(path):
 
 
@@ -49,6 +49,7 @@ coeff1 = s.buildSCFpyr(im1)
 coeff2 = s.buildSCFpyr(im2)
 
 def save_pic(array,file):
+
     pic = Image.fromarray(array)
     pic = pic.convert('RGB')
 
@@ -59,7 +60,7 @@ def become_0_255(array):
 
     return (array-np.min(array))/(np.max(array)-np.min(array))*255
 
-for i in range(1,4):
+for i in range(1,6):
     pyresult = result_path+'/pyramid%d'%i
     make_dir(pyresult)
 

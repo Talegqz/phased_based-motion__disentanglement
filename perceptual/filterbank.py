@@ -37,11 +37,11 @@ def visualize(coeff, normalize=True):
 
 
 class Steerable:
-    def __init__(self, height=5):
+    def __init__(self, height=5,nbands=4):
         """
         height is the total height, including highpass and lowpass
         """
-        self.nbands = 4
+        self.nbands = nbands
         self.height = height
         self.isSample = True
 
